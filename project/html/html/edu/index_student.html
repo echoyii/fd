@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>融易点——首页——培训主管面板</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../dist/css/comm.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../dist/ionicons-2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+  <style type="text/css">
+   html{
+     background: #fbfbfb;
+   }
+   .content{
+     background: #fbfbfb;
+   }
+   .info_box{
+     background: #fff;
+     box-shadow: 0 0px 8px 0 rgba(0,0,0,.04);
+   }
+   .quick{
+     color: #fff;
+     background: url(../dist/img/quick_bg.png);
+     padding-left: 20px;
+     width: 140px;
+     height: 58px;
+     line-height: 58px;
+     font-size: 18px;
+     display: block;
+     float: left;
+   }
+   .mark{
+     position: absolute;
+     top: -5px;
+     right: -5px;
+     border-radius: 50%;
+     height: 30px;
+     width: 30px;
+     line-height: 25px!important;
+     font-size: 14px;
+     box-shadow: 0 2px 8px 0 rgba(0,0,0,.2)
+   }
+   .products-list .product-title{
+     line-height: 30px;
+   }
+   .products-list .product-img{
+     width: 50px;
+     height: 50px;
+     background: #10b2da;
+     color: #fff;
+   }
+   .products-list .product-img .day{
+     font-size: 24px;
+     text-align: center;
+     line-height: 18px;
+     margin-top: 8px;
+     display: block;
+   }
+   .products-list .product-img .month{
+     font-size: 14px;
+     text-align: center;
+     display: block;
+   }
+   .products-list .product-title{
+     color: #6f6f6f;
+   }
+   .products-list .product-title:hover{
+     color: #10b2da;
+   }
+   .products-list>.item{
+     padding: 15px 0px;
+   }
+   .small-box{
+     background:#1f95d0;
+     color: #fff;
+   }
+   .small-box .icon{
+     color: rgba(255,255,255,0.5)
+   }
+   .task_item{
+     padding: 10px 10px 30px;
+     background: #f8f8f8;
+     border-bottom: 1px solid #fff;
+     color: #1f95d0;
+   }
+   .ulitem {
+        width: 100%;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+        padding: 5px;
+        cursor: pointer;
+      }   
+   .ulitem:hover {
+        border: 1px solid red;
+      }   
+  </style>
+</head>
+<body>
+  <!--内容区域顶栏面包屑开始-->
+  <section class="content-header">
+    <h1 class="info_title">
+      首页
+      <small>/学员面板</small>
+    </h1>
+    <ol class="breadcrumb">
+    </ol>
+  </section>
+  <!--内容区域顶栏面包屑结束-->
+  <section class="content">
+    <div class="row">
+       <div class="col-lg-12">
+         <div class="info_box mt15">
+           <div class="box-header with-border info_box_title">
+             <span>我的任务</span>
+           </div>
+           <div class="box-body">
+               <a><div class="transact_but bg-aqua color-palette mr15">
+                 <div><i class="fa fa-calendar-plus-o"></i></div>
+                 <span>培训项目任务</span>
+                 <span class="label label-danger mark">8</span>
+               </div></a>
+               <a><div class="transact_but bg-light-blue color-palette mr15">
+                 <div><i class="fa fa-calendar-plus-o"></i></div>
+                 <span>课程任务</span>
+                 <span class="label label-danger mark">48</span>
+               </div></a>
+               <a><div class="transact_but bg-red color-palette mr15">
+                 <div><i class="fa fa-calendar-plus-o"></i></div>
+                 <span>试卷任务</span>
+                 <span class="label label-danger mark">2</span>
+               </div></a>
+               <a><div class="transact_but bg-yellow color-palette mr15">
+                 <div><i class="fa fa-calendar-plus-o"></i></div>
+                 <span>问卷任务</span>
+                 <span class="label label-danger mark">4</span>
+               </div></a>
+           </div>    
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <div class="info_box mt15">
+           <div class="box-header with-border info_box_title">
+             <span>最近学习</span>
+           </div>
+           <div class="box-body">
+               <div class="col-sm-2 mb20">
+                      <div class="ulitem">
+                        <a href="Front_Attendance_course.html">
+                          <div><img src="../dist/img/class1.png" width="100%" /></div>
+                        </a>
+                        <div class="box-title mt5 row">
+                          <label class="col-sm-12">FR:职业心态<span class="pull-right text-right">45分钟</span></label>
+                          <label class="col-sm-12"><a><i class="fa fa-eye mr5 "></i> <span>45</span></a></label>
+                        </div>
+                        <div class="box-title row">
+                          <label class="col-sm-12 "><h4><a>数码摄影-录播合辑</a></h4></label>
+                        </div>
+                        <div class="progress progress-sm ">
+                          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                            <span class="sr-only">20% Complete</span>
+                          </div>
+                        </div>
+                        <div class="box-title mt5">
+                           <button type="button" class="btn btn-block btn-info btn-flat">继续学习</button>
+                        </div>
+                      </div>
+               </div>
+               <div class="col-sm-2 mb20">
+                      <div class="ulitem">
+                        <a href="Front_Attendance_course.html">
+                          <div><img src="../dist/img/class6.png" width="100%" /></div>
+                        </a>
+                        <div class="box-title mt5 row">
+                          <label class="col-sm-12">FR:职业心态<span class="pull-right text-right">45分钟</span></label>
+                          <label class="col-sm-12"><a><i class="fa fa-eye mr5 "></i> <span>45</span></a></label>
+                        </div>
+                        <div class="box-title row">
+                          <label class="col-sm-12 "><h4><a>数码摄影-录播合辑</a></h4></label>
+                        </div>
+                        <div class="progress progress-sm ">
+                          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                            <span class="sr-only">60% Complete</span>
+                          </div>
+                        </div>
+                        <div class="box-title mt5">
+                           <button type="button" class="btn btn-block btn-info btn-flat">继续学习</button>
+                        </div>
+                      </div>
+               </div>
+               <div class="col-sm-2 mb20">
+                      <div class="ulitem">
+                        <a href="Front_Attendance_course.html">
+                          <div><img src="../dist/img/class5.png" width="100%" /></div>
+                        </a>
+                        <div class="box-title mt5 row">
+                          <label class="col-sm-12">FR:职业心态<span class="pull-right text-right">45分钟</span></label>
+                          <label class="col-sm-12"><a><i class="fa fa-eye mr5 "></i> <span>45</span></a></label>
+                        </div>
+                        <div class="box-title row">
+                          <label class="col-sm-12 "><h4><a>数码摄影-录播合辑</a></h4></label>
+                        </div>
+                        <div class="progress progress-sm ">
+                          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <span class="sr-only">40% Complete</span>
+                          </div>
+                        </div>
+                        <div class="box-title mt5">
+                           <button type="button" class="btn btn-block btn-info btn-flat">继续学习</button>
+                        </div>
+                      </div>
+               </div>
+               <div class="col-sm-2 mb20">
+                      <div class="ulitem">
+                        <a href="Front_Attendance_course.html">
+                          <div><img src="../dist/img/class4.png" width="100%" /></div>
+                        </a>
+                        <div class="box-title mt5 row">
+                          <label class="col-sm-12">FR:职业心态<span class="pull-right text-right">45分钟</span></label>
+                          <label class="col-sm-12"><a><i class="fa fa-eye mr5 "></i> <span>45</span></a></label>
+                        </div>
+                        <div class="box-title row">
+                          <label class="col-sm-12 "><h4><a>数码摄影-录播合辑</a></h4></label>
+                        </div>
+                        <div class="progress progress-sm ">
+                          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%">
+                            <span class="sr-only">67% Complete</span>
+                          </div>
+                        </div>
+                        <div class="box-title mt5">
+                           <button type="button" class="btn btn-block btn-info btn-flat">继续学习</button>
+                        </div>
+                      </div>
+               </div>
+               <div class="col-sm-2 mb20">
+                      <div class="ulitem">
+                        <a href="Front_Attendance_course.html">
+                          <div><img src="../dist/img/class3.png" width="100%" /></div>
+                        </a>
+                        <div class="box-title mt5 row">
+                          <label class="col-sm-12">FR:职业心态<span class="pull-right text-right">45分钟</span></label>
+                          <label class="col-sm-12"><a><i class="fa fa-eye mr5 "></i> <span>45</span></a></label>
+                        </div>
+                        <div class="box-title row">
+                          <label class="col-sm-12 "><h4><a>数码摄影-录播合辑</a></h4></label>
+                        </div>
+                        <div class="progress progress-sm ">
+                          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                            <span class="sr-only">85% Complete</span>
+                          </div>
+                        </div>
+                        <div class="box-title mt5">
+                           <button type="button" class="btn btn-block btn-info btn-flat">继续学习</button>
+                        </div>
+                      </div>
+               </div>
+               <div class="col-sm-2 mb20">
+                      <div class="ulitem">
+                        <a href="Front_Attendance_course.html">
+                          <div><img src="../dist/img/class2.png" width="100%" /></div>
+                        </a>
+                        <div class="box-title mt5 row">
+                          <label class="col-sm-12">FR:职业心态<span class="pull-right text-right">45分钟</span></label>
+                          <label class="col-sm-12"><a><i class="fa fa-eye mr5 "></i> <span>45</span></a></label>
+                        </div>
+                        <div class="box-title row">
+                          <label class="col-sm-12 "><h4><a>数码摄影-录播合辑</a></h4></label>
+                        </div>
+                        <div class="progress progress-sm ">
+                          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100" style="width: 58%">
+                            <span class="sr-only">58% Complete</span>
+                          </div>
+                        </div>
+                        <div class="box-title mt5">
+                           <button type="button" class="btn btn-block btn-info btn-flat">继续学习</button>
+                        </div>
+                      </div>
+               </div>
+           </div>    
+         </div>
+       </div>
+       <div class="col-lg-7">
+         <div class="info_box mt15">
+             <div class="box-header with-border info_box_title">
+               <span>学习概况</span>
+             </div>
+             <div class="box-body">
+                <div class="row">
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box">
+                      <div class="inner">
+                        <h3>150<span style="font-size: 20px">/分钟</span></h3>
+
+                        <p>累计 学时</p>
+                      </div>
+                      <div class="icon">
+                        <i class="fa fa-tachometer"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box">
+                      <div class="inner">
+                        <h3>53<span style="font-size: 20px">/门</span></h3>
+
+                        <p>课程 数量</p>
+                      </div>
+                      <div class="icon">
+                        <i class="fa fa-book"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box">
+                      <div class="inner">
+                        <h3>53<span style="font-size: 20px">/分</span></h3>
+
+                        <p>累计 学分</p>
+                      </div>
+                      <div class="icon">
+                        <i class="fa fa-cube"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             </div>    
+         </div>
+         <div class="info_box mt15">
+             <div class="box-header with-border info_box_title">
+               <span>统计</span>
+             </div>
+             <div class="box-body">
+                <div id="chart-panel1" style="width: 30%;height:250px;float: left; margin-right: 5%;">
+                </div>
+                <div id="chart-panel2" style="width: 30%;height:250px;float: left; margin-right: 5%;">
+                </div>
+                <div id="chart-panel3" style="width: 30%;height:250px;float: left;">
+                </div>
+                <div id="chart-panel1" style="width: 30%;float: left; margin-right: 5%;">
+                    <div class="mt15 text-center">学员学习时长</div>
+                    <div class="mt15 mb10 text-center">累计523分钟</div>
+                </div>
+                <div id="chart-panel2" style="width: 30%;float: left; margin-right: 5%;">
+                    <div class="mt15 text-center">学员考试成绩</div>
+                    <div class="mt15 mb10 text-center">平均89分</div>
+                </div>
+                <div id="chart-panel3" style="width: 30%;float: left;">
+                    <div class="mt15 text-center">学员学分</div>
+                    <div class="mt15 mb10 text-center">累计250学分</div>
+                </div>
+             </div>    
+         </div>
+       </div>
+       <div class="col-lg-5">
+         <div class="info_box mt15">
+             <div class="box-header with-border info_box_title">
+               <span>课程上新</span>
+             </div>
+             <div class="box-body">
+                <table class="table">
+                  <tbody>
+                      <tr>
+                        <td>
+                           <small type="button" class="btn bg-red btn-flat label margin"> 
+                             1
+                           </small>
+                        </td>
+                        <td>
+                            [课程]
+                            <a>金融服务礼仪基础知识培训</a>
+                        </td>
+                        <td>96分钟</td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <small type="button" class="btn bg-orange btn-flat label margin"> 
+                             2
+                           </small>
+                        </td>
+                        <td>
+                            [课程]
+                            <a>金融服务礼仪基础知识培训</a>
+                        </td>
+                        <td>96分钟</td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <small type="button" class="btn bg-yellow btn-flat label margin"> 
+                             3
+                           </small>
+                        </td>
+                        <td>
+                            [课程]
+                            <a>金融服务礼仪基础知识培训</a>
+                        </td>
+                        <td>96分钟</td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <small type="button" class="btn bg-green btn-flat label margin"> 
+                             4
+                           </small>
+                        </td>
+                        <td>
+                            [课程]
+                            <a>金融服务礼仪基础知识培训</a>
+                        </td>
+                        <td>96分钟</td>
+                      </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="text-right" colspan="5">
+                         <a href="#" class="mr30">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+             </div>   
+         </div>
+         <div class="info_box mt15">
+             <div class="box-header with-border info_box_title">
+               <span>新闻资讯</span>
+             </div>
+             <div class="box-body">
+                <ul class="products-list product-list-in-box">
+                  <li class="item">
+                    <div class="product-img">
+                       <span class="day">27</span>
+                       <span class="month">Sep</span>
+                    </div>
+                    <div class="product-info">
+                      <div>
+                        <a href="javascript:void(0)" class="product-title">
+                          经济日报：培育新动能 壮大新实力—记贵州建设国内首屈一指第一家
+                          <span class="label label-success pull-right">new</span>
+                        </a>
+                      </div>
+                          <span class="product-description float_l">
+                            <i class="fa fa-clock-o"></i>
+                            2016-09-27  14:35:54
+                          </span>
+                          <a href="#" class="product-description float_r">
+                            查看详情>>
+                          </a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="product-img">
+                       <span class="day">27</span>
+                       <span class="month">Sep</span>
+                    </div>
+                    <div class="product-info">
+                      <div>
+                        <a href="javascript:void(0)" class="product-title">
+                          经济日报：培育新动能 壮大新实力—记贵州建设国内首屈一指第一家
+                          <span class="label label-success pull-right">new</span>
+                        </a>
+                      </div>
+                          <span class="product-description float_l">
+                            <i class="fa fa-clock-o"></i>
+                            2016-09-27  14:35:54
+                          </span>
+                          <a href="#" class="product-description float_r">
+                            查看详情>>
+                          </a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="product-img">
+                       <span class="day">27</span>
+                       <span class="month">Sep</span>
+                    </div>
+                    <div class="product-info">
+                      <div>
+                        <a href="javascript:void(0)" class="product-title">
+                          经济日报：培育新动能 壮大新实力—记贵州建设国内首屈一指第一家
+                          <span class="label label-success pull-right">new</span>
+                        </a>
+                      </div>
+                          <span class="product-description float_l">
+                            <i class="fa fa-clock-o"></i>
+                            2016-09-27  14:35:54
+                          </span>
+                          <a href="#" class="product-description float_r">
+                            查看详情>>
+                          </a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="product-img">
+                       <span class="day">27</span>
+                       <span class="month">Sep</span>
+                    </div>
+                    <div class="product-info">
+                      <div>
+                        <a href="javascript:void(0)" class="product-title">
+                          经济日报：培育新动能 壮大新实力—记贵州建设国内首屈一指第一家
+                          <span class="label label-success pull-right">new</span>
+                        </a>
+                      </div>
+                          <span class="product-description float_l">
+                            <i class="fa fa-clock-o"></i>
+                            2016-09-27  14:35:54
+                          </span>
+                          <a href="#" class="product-description float_r">
+                            查看详情>>
+                          </a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="product-img">
+                       <span class="day">27</span>
+                       <span class="month">Sep</span>
+                    </div>
+                    <div class="product-info">
+                      <div>
+                        <a href="javascript:void(0)" class="product-title">
+                          经济日报：培育新动能 壮大新实力—记贵州建设国内首屈一指第一家
+                          <span class="label label-success pull-right">new</span>
+                        </a>
+                      </div>
+                          <span class="product-description float_l">
+                            <i class="fa fa-clock-o"></i>
+                            2016-09-27  14:35:54
+                          </span>
+                          <a href="#" class="product-description float_r">
+                            查看详情>>
+                          </a>
+                    </div>
+                  </li>
+                </ul>
+             </div>   
+         </div>
+       </div>
+    </div>
+  </section>
+
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../plugins/fastclick/fastclick.js"></script>
+<script src="../plugins/layer/layer.js"></script>
+<script src="../plugins/echarts/echarts.min.js"></script>
+<script src="../dist/js/app.min.js"></script>
+<script src="../dist/js/demo.js"></script>
+<script type="text/javascript">
+  
+  //统计图表
+  //初始化chart-panel1
+  var myChart = echarts.init(document.getElementById('chart-panel1'));
+  //参数设置
+  option = {
+
+          tooltip: {    //提示框组件
+
+              trigger: 'axis'
+
+          },
+
+          legend: {     //图例组件
+
+              data: ['学员学习时长']
+
+          },
+
+          grid: {       //直角坐标系内绘图网格
+
+              left: '3%',
+
+              right: '4%',
+
+              bottom: '3%',
+
+              containLabel: true
+
+          },
+          xAxis: {       //直角坐标系 grid 中的 x 轴
+
+              type: 'category',
+
+              boundaryGap: false,
+
+              data: ['11月3号', '11月5号', '11月7号', '11月9号', '11月11号']
+
+          },
+
+          yAxis: {       //直角坐标系 grid 中的 y 轴
+
+              type: 'value'
+
+          },
+
+          series: [      //系列列表
+
+              {
+
+                  name: '学员学习时长',
+
+                  type: 'line',
+
+                  stack: '分钟',
+
+                  data: [120, 132, 101, 134, 90, 230, 210],
+
+                  color: ['#48c3aa']
+
+              }
+
+          ]
+
+    };
+  myChart.setOption(option);   //参数设置方法  
+
+  //初始化chart-panel2
+  var myChart = echarts.init(document.getElementById('chart-panel2'));
+  //参数设置
+  option = {
+
+          tooltip: {    //提示框组件
+
+              trigger: 'axis'
+
+          },
+
+          legend: {     //图例组件
+
+              data: ['学员考试成绩']
+
+          },
+
+          grid: {       //直角坐标系内绘图网格
+
+              left: '3%',
+
+              right: '4%',
+
+              bottom: '3%',
+
+              containLabel: true
+
+          },
+          xAxis: {       //直角坐标系 grid 中的 x 轴
+
+              type: 'category',
+
+              boundaryGap: false,
+
+              data: ['11月3号', '11月5号', '11月7号', '11月9号', '11月11号']
+
+          },
+
+          yAxis: {       //直角坐标系 grid 中的 y 轴
+
+              type: 'value'
+
+          },
+
+          series: [      //系列列表
+
+              {
+
+                  name: '学员考试成绩',
+
+                  type: 'line',
+
+                  stack: '分',
+
+                  data: [79, 98, 86, 75, 90, 95, 82],
+
+                  color: ['#1f95d0']
+
+              }
+
+          ]
+
+    };
+  myChart.setOption(option);   //参数设置方法 
+
+  //初始化chart-panel3
+  var myChart = echarts.init(document.getElementById('chart-panel3'));
+  //参数设置
+  option = {
+
+          tooltip: {    //提示框组件
+
+              trigger: 'axis'
+
+          },
+
+          legend: {     //图例组件
+
+              data: ['学员学分']
+
+          },
+
+          grid: {       //直角坐标系内绘图网格
+
+              left: '3%',
+
+              right: '4%',
+
+              bottom: '3%',
+
+              containLabel: true
+
+          },
+          xAxis: {       //直角坐标系 grid 中的 x 轴
+
+              type: 'category',
+
+              boundaryGap: false,
+
+              data: ['11月3号', '11月5号', '11月7号', '11月9号', '11月11号']
+
+          },
+
+          yAxis: {       //直角坐标系 grid 中的 y 轴
+
+              type: 'value'
+
+          },
+
+          series: [      //系列列表
+
+              {
+
+                  name: '学员学分',
+
+                  type: 'line',
+
+                  stack: '分',
+
+                  data: [120, 132, 101, 134, 90, 230, 210],
+
+                  color: ['#dd4b39']
+
+              }
+
+          ]
+
+    };
+  myChart.setOption(option);   //参数设置方法   
+
+</script>
+</body>
+</html>

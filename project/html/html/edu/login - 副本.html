@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新改登录界面</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!--  登录页面样式表-->
+		<link rel="stylesheet" href="../dist/css/login.css">
+	</head>
+
+	<body class="hold-transition login-page login-bg">
+		
+		<div class="login-box">
+		    <div class="login_header">
+		    	<img class="login_logo" src="../dist/img/login_logo.jpg" alt="" />
+		    	<span class="login_title">中国工商银行股份有限公司陕西省分行</span>
+		    </div>
+		    <div class="login_body">
+		    	<!--<div class="login_body_left"></div>-->
+		    	<div class="login_body_right">
+		    		<div>
+			    		<ul class="label">
+			    			<li><a class="active" id="tab1" onclick="login(1);" href="#">登录</a></li>
+			    			<li><a id="tab2" onclick="login(2);" href="#">注册</a></li>
+			    		</ul>
+			    	</div>
+		    		<!--登录开始-->
+		    		<div id="login1_content" class="tab_css">
+			    		<!--账号登录开始-->
+			    		<div class="info" id="ID">
+			    			<div class="info_box"><input type="text" name="" placeholder="请输入登录账号"></div>
+			    			<div class="info_box"><input type="text" name="" placeholder="请输入登录密码"></div>
+			    			<div class="info_box">
+			    			     <input class="code_inp float_l" type="text" name="" placeholder="请输入右侧验证码">
+			    			     <img class="code code_img float_l" src="" alt=""/>
+			    			     <a class="refresh" href="#"><i class="fa fa-refresh mr5"></i>刷新</a>
+			    			</div>
+			    			<div class="info_box"><a class="button text-center" href="#">立即登录</a></div>
+			    			<div class="info_box">
+			    				<a onclick="mobile();" href="#" id="login1">
+			    				   <i class="fa fa-mobile mr5"></i>手机验证登录
+			    				</a>
+			    			</div>
+			    		</div>
+			    		<!--账号登录结束-->
+			    		<!--手机登录开始-->
+			    		<div class="info" id="mobile">
+			    			<div class="info_box"><input type="text" name="" placeholder="请输入手机号"></div>
+			    			<div class="info_box">
+			    			     <input class="float_l code_inp2" type="text" name="" placeholder="请输入验证码">
+			    			     <a href="#" class="code text-center float_l">获取验证码</a>
+			    			</div>
+			    			<div class="info_box"><a class="button text-center" href="#">立即登录</a></div>
+			    			<div class="info_box">
+			    			     <a href="#" onclick="ID();" id="login2">
+			    			         <i class="fa fa-user mr5"></i>账号密码登录
+			    			     </a>
+			    			</div>
+			    		</div>
+			    		<!--手机登录结束-->
+		    		</div>
+		    		<!--登录结束-->
+		    		<!--注册开始-->
+		    		<div id="login2_content" class="info tab_css" style="display: none;">
+		    			<div class="info_box"><input type="text" name="" placeholder="请输入姓名"></div>
+		    			<div class="info_box"><input type="text" name="" placeholder="请输入手机号"></div>
+		    			<div class="info_box">
+		    			     <input class="float_l code_inp2" type="text" name="" placeholder="请输入验证码">
+		    			     <a href="#" class="code text-center float_l">获取验证码</a>
+		    			</div>
+		    			<div class="info_box"><input type="text" name="" placeholder="请设置登录密码"></div>
+		    			<div class="info_box"><input type="text" name="" placeholder="请再次确认密码"></div>
+		    			<div class="info_box"><input type="text" name="" placeholder="请输入工号（非必填）"></div>
+		    			<div class="info_box"><a class="button text-center" href="#">立即注册</a></div>
+		    		</div>
+		    		<!--注册结束-->
+		    	</div>
+			    <div class="login_footer text-center">
+			    	版权所有 深圳典阅科技有限公司 Copyright©2016 occupationedu.com All Rights Reserved. 服务热线：400-9600-062
+			    </div>	
+		    </div>
+		</div>
+		<!-- jQuery 2.2.3 -->
+		<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			//点击登录注册标签加样式
+			$('.label a').bind('click', function(){
+			    $('a').removeClass('active');
+  				$(this).addClass('active');
+			});
+            
+            //登录注册标签页切换
+			var login = function(v) { 
+                var llis = document.getElementsByTagName("li");
+                for(var i = 0; i < llis.length; i++) {  
+                    var lli = llis[i];
+                }  
+  
+                var divs = document.getElementsByClassName("tab_css");  
+                for(var i = 0; i < divs.length; i++) {  
+  
+                    var divv = divs[i];  
+  
+                    if(divv == document.getElementById("login" + v + "_content")) {  
+                        divv.style.display = "block";  
+                    } else {  
+                        divv.style.display = "none";  
+                    }  
+                }  
+  
+            }  
+
+            //登录方式切换
+            $(function ID(){
+				$("#mobile").hide(); //默认隐藏
+				$("#login1").on("click",function mobile(){
+				$("#ID").toggle();//显示隐藏切换
+				$("#mobile").show();
+				})
+			})
+
+			$(function mobile(){
+				$("#login2").on("click",function ID(){
+				$("#mobile").toggle();//显示隐藏切换
+				$("#ID").show();
+				})
+			})
+
+		</script>
+	</body>
+</html>

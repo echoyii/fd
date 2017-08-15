@@ -1,0 +1,91 @@
+<layout name="layout" />
+
+                  
+              <!--内容开始-->
+              <div class="row">
+                  <div class="col-sm-12">
+                        <div class="box-header with-border">
+                          <!--新增资讯的title-->
+                          <h3 class="box-title ">新增新闻资讯</h3>
+                          <!--新增资讯的title-->
+                          <!--编辑资讯的title显示该资讯的标题-->
+                          <h3 class="box-title "></h3>
+                          <!--编辑资讯的title显示该资讯的标题-->
+                        </div>
+                        <form method="post" action="{:U('news/update')}" class="form-horizontal">
+                          <div class="box-body">
+                              <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">标题：</label>
+
+                                <div class="col-sm-10">
+                                  <input type="text" value="{$detail.title}" name="title" class="form-control" placeholder="请输入标题" style="width: 500px;">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">正文内容：</label>
+                                
+                                <div class="col-sm-10">
+                                   <!--编辑器开始-->
+                                   <textarea id="TextArea1" name="content" cols="20" rows="2" class="ckeditor">{$detail.content}</textarea>
+                                   <!--编辑器结束-->
+                                </div>
+                                <div><input type="hidden" name="id" value="{$detail.id|default=''}"/></div>
+                              </div>
+                          <div class="box-footer">
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label"></label>
+                                <div class="col-sm-10">
+                                  <button  class="btn btn-info form-group_but">发布</button>
+                                </div>
+                              </div>
+                          </div>
+                        </form>
+                  </div>
+              </div>
+              <!--内容結束-->
+
+
+</div>
+
+
+<script type="text/javascript">
+  
+  //radio选中样式
+  $('input').iCheck({ 
+    labelHover : false, 
+    cursor : true, 
+    checkboxClass : 'icheckbox_square-blue', 
+    radioClass : 'iradio_minimal-blue', 
+    increaseArea : '20%' 
+  }); 
+
+  //讲师身份选中显示字段
+  $(function(){
+   alert("1");
+   showCont();
+   $("input[name=lecturer]").on("click",function(){
+    showCont();
+   });
+  });
+  function showCont(){
+   switch($("input[name=lecturer]:checked").attr("id")){
+    case "lecturer_inside":
+     //alert("one");
+     $("#supplier").hide();
+     $("#address").hide();
+     $("#teaching_time").show();
+     $("#age").show();
+     break;
+    case "lecturer_exterior":
+     $("#teaching_time").hide();
+     $("#age").hide();
+     $("#supplier").show();
+     $("#address").show();
+     break;
+    default:
+     break;
+   }
+  }
+</script>
+</body>
+</html>

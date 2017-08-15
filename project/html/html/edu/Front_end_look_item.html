@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>前台查看培训项目</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<link rel="stylesheet" href="../dist/css/comm.css">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../dist/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../dist/ionicons-2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+		<link rel="stylesheet" href="../dist/css/comm.css">
+		<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+		<link rel="stylesheet" href="../plugins/layer/skin/layer.css">
+		<link rel="stylesheet" href="../plugins/iCheck/all.css">
+		<!-- daterange picker -->
+		<link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+		<!-- bootstrap datepicker -->
+		<link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
+		<!-- iCheck for checkboxes and radio inputs -->
+		<link rel="stylesheet" href="../plugins/iCheck/all.css">
+		<!-- Bootstrap Color Picker -->
+		<link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
+		<!-- Bootstrap time Picker -->
+		<link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
+		<!-- Select2 -->
+		<link rel="stylesheet" href="../plugins/select2/select2.min.css">
+	</head>
+	<body>
+		<!--内容区域顶栏面包屑开始-->
+				<section class="content-header">
+					<h1 class="info_title">
+        培训项目
+        <small>/查看培训项目</small>
+      </h1>
+					<ol class="breadcrumb">
+						<li>
+							<a href="#"><i class="fa fa-mail-reply-all"></i>返回</a>
+						</li>
+					</ol>
+				</section>
+				<!--内容区域顶栏面包屑结束-->
+				<section class="content">
+					<div class="box">
+						<div class="box-body">
+							<div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap ">
+								<!--内容开始-->
+								<div class="box-header with-border">
+									<h3 class="box-title col-sm-8">新员工培训成长项目</h3>
+									<div class="">
+										<label class="text-aqua box-title col-sm-2  mr30">
+                                    <i class="fa  fa-send-o mr5"></i>状态： <span class="text-red">待审核</span> </label>		
+									</div>
+									<label class="box-title col-sm-2 ">
+										<span class="pull-right" onclick="del_click()">
+											<a href="#" ><i class="fa  fa-trash mr5" aria-hidden="true"></i>删除</a></span>
+									</label>
+								</div>
+
+								<div class="box-header with-border">
+									<label class="box-title col-sm-12 ">
+										<span class="pull-right">
+											<a href="../edu/Front_end_add_item.html" ><i class="fa fa-edit mr5" aria-hidden="true"></i>编辑</a>
+									</label>
+								</div>
+								<form class="form-horizontal">
+									<div class="box-body">
+										<!--封面上传字段开始-->
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-2 control-label">项目封面：</label>
+											<div class="col-sm-10">
+												<div class="box box-success certificate_img">
+
+													<div class="box-body">
+														<img src="../dist/img/photo3.jpg" alt="课件预览" width="100%" />
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<!--封面上传字段结束-->
+										<!--项目名称字段开始-->
+										<div class="form-group" id="supplier" style="display: none;">
+											<label for="inputEmail3" class="col-sm-2 control-label">项目名称<span class="color_red">*</span>：</label>
+
+											<div class="col-sm-10">
+												<label class="col-sm-2  pt10"><span class=""> 新员工培训项目</span></label>
+											</div>
+										</div>
+										<!--项目名称字段结束-->
+										<!--培训班字段开始-->
+										<div class="form-group" id="supplier" style="display: none;">
+											<label for="inputEmail3" class="col-sm-2 control-label">培训班名称<span class="color_red">*</span>：</label>
+
+											<div class="col-sm-10">
+												<label class="col-sm-2  pt10"><span > 新员工成长培训一班</span></label>
+											</div>
+										</div>
+										<!--培训班字段结束-->
+
+										<!--项目名称字段开始-->
+										<div class="form-group" id="supplier" style="display: none;">
+											<label for="inputEmail3" class="col-sm-2 control-label">项目时间：</label>
+
+											<div class="col-sm-10">
+												<label class="col-sm-8  pt10"><span >2016-07-11 19:30 至2016-07-16 19:30</span></label>
+
+											</div>
+										</div>
+										<!--项目名称字段结束-->
+										<!--项目描述字段开始-->
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-2 control-label">项目描述：</label>
+
+											<div class="col-sm-10">
+												<label class="col-sm-8  pt10"><span													
+一、培训目标</br>
+
+通过培训，提高员工的服务意识、文化素质和管理服务水平，掌握酒店式服务操作技能，打造品牌、全面塑造“××”的职业团队，实现企业的跨越发展。</br>
+
+二、培训原则</br>
+
+统一计划、统一内容、统一考核、分散实施。</br>
+
+三、培训方式</br>
+
+全员参加，分阶段、分层次的实施。</br>
+
+1、入职培训：对200×年新进员工进行针对性培训，物业基本情况、服务礼仪、礼节、管理与服务技巧等</br>
+
+2、上岗培训：上岗前针对各部门、各岗位职责、工作标准及相关的业务知识培训和考核。</br>
+
+3、在岗培训：针对不同对象，又针对地开展系列化、正规化的培训。</br>
+
+培训方法：集中授课，公开讨论，分析案例，总结学习体会。</br>
+
+考核方法：口试／以现场提问方式，检验员工对培训内容的掌握程度；</br>
+
+笔试／每阶段培训结束后，进行闭卷考试，以检查员工对所培训内容的接受能力和培训效果。									
+												</span></label>
+											</div>
+										</div>
+										<!--项目描述字段结束-->
+
+										
+										<!--制作人字段开始-->
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-2 control-label">项目预算：</label>
+
+											<div class="col-sm-10">
+												<label class="col-sm-2  pt10"><span > 8888</span>元</label>
+											</div>
+										</div>
+										<!--制作人字段结束-->
+										<!--章节添加字段开始-->
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-2 control-label">指定人员：</label>
+											<div class="col-sm-10">
+												<label class="col-sm-2  pt10"><span >刘丽、马鑫、张帆、奇里斯</span></label>
+											</div>
+										</div>
+										<!--章节添加字段结束-->
+
+										<!--学分字段开始-->
+										<div class="form-group" id="address" style="display: none;">
+											<label for="inputEmail3" class="col-sm-2 control-label">公开报名：</label>
+
+											<div class="col-sm-10">
+												<label class="col-sm-3  pt10"><span >不公开</span></label>
+												<div class="col-sm-2">
+											<a href="Front_end_summary_item.html" type="button" class="btn btn-success" >  <i class="fa fa-calendar-check-o mr5" aria-hidden="true"></i>查看项目总结</a>
+										</div>
+											</div>				
+										</div>
+										<!--学分字段结束-->	
+									</div>
+									<div class="box-footer"></div>
+								</form>
+								<!--内容結束-->
+
+								<div class="box-header with-border">
+									<label class="box-title col-sm-12 ">
+										<span class="pull-right">
+											<a href="../edu/Front_end_add_item_list.html" ><i class="fa fa-edit mr5" aria-hidden="true"></i>编辑</a>
+									</label>
+								</div>
+								<div class="box-header with-border">
+									<label class="box-title col-sm-10"> <i class="fa fa-book text-blue mr5"></i>课程</label>
+								</div>
+								<!--添加课程开始-->
+								<div class="box-body">
+									<div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+										<!--内容开始-->
+										<div class="row">
+											<div class="col-sm-12">
+												<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+													<thead>
+														<tr role="row">
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">课程名称</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">授课方式</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">讲师</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">开始时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">结束时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">学分</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">学习地址</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">考勤</th>
+														</tr>
+													</thead>
+													<tbody id="tab">
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>面授</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+															<td>公司大会议室</td>
+															<td><input type="radio" name="lecturer" id="" value="option1"></td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>面授</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+															<td>公司大会议室</td>
+															<td><span href="#" class="color_gree "><i class="fa  fa-check " aria-hidden="true"></i></span></td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>面授</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+															<td>公司大会议室</td>
+															<td><input type="radio" name="lecturer" id="" value="option1"></td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>面授</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+															<td>公司大会议室</td>
+															<td><span href="#" class="color_gree "><i class="fa  fa-check " aria-hidden="true"></i></span></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--内容結束-->
+									</div>
+								</div>
+								<!-- 添加课程结束-->
+								<div class="box-header with-border">
+									<label class="box-title col-sm-10"> <i class="fa fa-object-group text-blue mr5"></i>考试</label>
+								</div>
+								<!--添加考试开始-->
+								<div class="box-body">
+									<div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+										<!--内容开始-->
+										<div class="row">
+											<div class="col-sm-12">
+												<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+													<thead>
+														<tr role="row">
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">考试名称</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">考试方式</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">负责人</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">开始时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">结束时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">学分</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">考试时长</th>
+														</tr>
+													</thead>
+													<tbody id="tab">
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>线下</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+															<td>60</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>线上</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>10</td>
+															<td>自动计算</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>线上</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>6</td>
+															<td>60</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td>线上</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>8</td>
+															<td>自动计算</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--内容結束-->
+									</div>
+								</div>
+								<!-- 添加考试结束-->
+								<div class="box-header with-border">
+									<label class="box-title col-sm-10"> <i class="fa fa-bar-chart text-blue mr5"></i>调研</label>
+								</div>
+								<!--添加考试开始-->
+								<div class="box-body">
+									<div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+										<!--内容开始-->
+										<div class="row">
+											<div class="col-sm-12">
+												<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+													<thead>
+														<tr role="row">
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">调研名称</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">负责人</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">开始时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">结束时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">学分</th>
+														</tr>
+													</thead>
+													<tbody id="tab">
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 刘老师</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>5</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--内容結束-->
+									</div>
+								</div>
+								<!-- 添加考试结束-->
+								<div class="box-header with-border">
+									<label class="box-title col-sm-10"> <i class="fa fa-anchor text-blue mr5"></i>指派任务</label>
+								</div>
+								<!--指派任务开始-->
+								<div class="box-body">
+									<div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+										<!--内容开始-->
+										<div class="row">
+											<div class="col-sm-12">
+												<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+													<thead>
+														<tr role="row">
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">任务名称</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">任务类型</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">负责人</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">任务形式</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">开始时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">结束时间</th>
+															<th class="sorting text-center" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">任务状态</th>
+														</tr>
+													</thead>
+													<tbody id="tab">
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 课程</td>
+															<td> 刘老师</td>
+															<td> 线上</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>待提交</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 课程</td>
+															<td> 刘老师</td>
+															<td> 线上</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>待提交</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 课程</td>
+															<td> 刘老师</td>
+															<td> 线上</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>待提交</td>
+														</tr>
+														<tr role="row" class="odd text-center">
+															<td>
+																金融服务礼仪这是名字
+															</td>
+															<td> 课程</td>
+															<td> 刘老师</td>
+															<td> 线上</td>
+															<td>2016-11-25 14:20</td>
+															<td>2016-11-28 14:20</td>
+															<td>待提交</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--内容結束-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+		<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../plugins/fastclick/fastclick.js"></script>
+		<script src="../dist/js/app.min.js"></script>
+		<script src="../plugins/sparkline/jquery.sparkline.min.js"></script>
+		<script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+		<script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+		<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<script src="../plugins/chartjs/Chart.min.js"></script>
+		<script src="../dist/js/pages/dashboard2.js"></script>
+		<script src="../plugins/iCheck/icheck.min.js"></script>
+		<script src="../plugins/ckeditor/ckeditor.js"></script>
+		<script src="../dist/js/demo.js"></script>
+		<script src="../plugins/layer/layer.js"></script>
+		<script type="text/javascript">
+			//radio选中样式
+			$('input').iCheck({
+				labelHover: false,
+				cursor: true,
+				checkboxClass: 'icheckbox_square-blue',
+				radioClass: 'iradio_minimal-blue',
+				increaseArea: '20%'
+			});
+			function del_click() {
+				//删除项目
+				layer.confirm('您确定要删除吗？', {
+					btn: ['确定', ],
+					skin: 'layui-layer-lan'
+						//按钮
+				}, function() {
+					layer.msg('删除成功', {
+						icon: 1
+					});
+				}, function() {
+					layer.msg('取消删除', {
+						time: 2000, //2s后自动关闭
+					});
+				});
+			}
+		</script>
+	</body>
+
+</html>

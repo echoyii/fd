@@ -1,0 +1,133 @@
+ <layout name="layout" />
+   <style type="text/css">
+    .col-sm-10{
+      text-align: left !important;
+    }
+    table tbody tr td a {
+      cursor: pointer;
+    }
+  </style>
+    <section class="content-header">
+      <h1 class="info_title">
+        资源管理
+        <small>/讲师管理</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="resources_lecturer_list.html"><i class="fa fa-mail-reply-all"></i>返回</a></li>
+      </ol>
+    </section>
+    <!--内容区域顶栏面包屑结束-->
+    <section class="content">
+          <div class="box">
+              <div class="box-header with-border">
+                  <h3 class="box-title ">夏夏夏</h3>
+              </div>
+              <div class="nav-tabs-custom ml10 mr10 mt10 mb10">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#lecturer_inside" data-toggle="tab">讲师详情</a></li>
+                  <li><a href="#lecturer_exterior" data-toggle="tab">讲师统计</a></li>
+                  
+                </ul>
+                <div class="tab-content">
+                   <div class="tab-pane active" id="lecturer_inside">
+                      <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                        <!--内容开始-->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                  <form class="form-horizontal">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">讲师姓名：</label>
+
+                                          <div class="col-sm-10">
+                                              <label for="inputEmail3" class="col-sm-10 control-label">{$detail.name}</label>
+                                          </div>
+                                        </div>
+                                        <div class="form-group" id="address" style="display: none;">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">讲师来源：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label">{$detail['type']?'外部讲师':'内部讲师'}</label>
+                                          </div>
+                                        </div>
+                                        <!--内部讲师字段开始-->
+                                        <div class="form-group" id="age" style="display: none;">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">工号：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label">{$detail.company_id}</label>
+                                          </div>
+                                        </div>
+                                        <!--内部讲师字段结束-->
+                                        <!--外部讲师字段开始-->
+                                        <div class="form-group" id="age" style="display: none;">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">供应商：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label">{$detail.resource}</label>
+                                          </div>
+                                        </div>
+                                        <div class="form-group" id="age" style="display: none;">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">课酬：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label"><a>{$detail.price}</a> /天</label>
+                                          </div>
+                                        </div>
+                                        <!--外部讲师字段结束-->
+                                        <div class="form-group" id="teaching_time" style="display: none;">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">授课年限：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label">{$detail.year}年</label>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">授课次数：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label">0次</label>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">授课课程：</label>
+
+                                          <div class="col-sm-10">
+                                            <label for="inputEmail3" class="col-sm-10 control-label">无</label>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">讲师介绍：</label>
+
+                                          <div class="col-sm-10">
+    
+                                      {$detail.desc|html_entity_decode}
+
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="inputEmail3" class="col-sm-2 control-label">证书：</label>
+                                              <div class="col-sm-10" style="display: block;">
+                                                 
+                                                    </div>
+                                              </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                              <div class="col-sm-10" style="display: block;">
+                                                 
+                                                 
+                                              </div>
+                                        </div>
+                                    </div>
+                                  </form>
+                            </div>
+                        </div>
+                        <!--内容結束-->
+                      </div>
+                   </div>
+                
+                <!-- /.tab-content -->
+              </div>
+          </div>
+    </section>

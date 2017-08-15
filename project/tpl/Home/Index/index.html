@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>login</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="__PUBLIC__/Css/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!--  登录页面样式表-->
+        <link rel="stylesheet" href="__PUBLIC__/Css/login.css">
+    </head>
+
+    <body class="hold-transition login-page login-bg">
+        
+        <div class="login-box">
+            <div class="login_header">
+                <img class="login_logo" src="__PUBLIC__/Images/login_logo.jpg" alt="" />
+                <span class="login_title">中国工商银行股份有限公司陕西省分行</span>
+            </div>
+            <div class="login_body">
+                <div class="login_body_left"></div>
+                <div class="login_body_right">
+                    <div>
+                        <ul class="label">
+                            <li><a class="active" id="tab1" onclick="login(1);" href="#">登录</a></li>
+                            <li><a id="tab2" onclick="login(2);" href="#">注册</a></li>
+                        </ul>
+                    </div>
+                    <!--登录开始-->
+                    <div id="login1_content" class="tab_css">
+                        <!--账号登录开始-->
+              <form action="__CONTROLLER__/login" method="post">
+                        <div class="info" id="ID">
+                            <div class="info_box"><input type="text" name="username" placeholder="请输入登录账号"></div>
+                            <div class="info_box"><input type="text" name="password" placeholder="请输入登录密码"></div>
+                            <div class="info_box">
+                                 <input class="code_inp float_l" type="text" name="code" placeholder="请输入右侧验证码">
+                                 <img class="code code_img float_l" src="{:U('Home/Public/verify',array())}" alt="" title="点击更换验证码" id="verify_img"/>
+                                 <a class="refresh" id="refresh"><i class="fa fa-refresh mr5"></i>刷新</a>
+                            </div>
+                            <div class="info_box" id="info_box"><a class="button text-center" href="#">立即登录</a></div>
+                            <div class="info_box">
+                                <a onclick="mobile();" href="#" id="login1">
+                                   <i class="fa fa-mobile mr5"></i>手机验证登录
+                                </a>
+                            </div>
+                        </div>
+                        </form>
+                        <!--账号登录结束-->
+                        <!--手机登录开始-->
+                        <div class="info" id="mobile">
+                            <div class="info_box"><input type="text" name="mobile" placeholder="请输入手机号" value=""></div>
+                            <div class="info_box">
+                                 <input class="float_l code_inp2" type="text" name="mobilecode" placeholder="请输入验证码" value="">
+                                 <a href="#" class="code text-center float_l"><input style="width:80px; font-size:12px;" type="button" id="btn" value="获取验证码" onclick="settime(this)";/> </a>
+                            </div>
+                            <div class="info_box" onclick="mobilelogin(this)";><a class="button text-center" href="#" >立即登录</a></div>
+                            <div class="info_box">
+                                 <a href="#" onclick="ID();" id="login2">
+                                     <i class="fa fa-user mr5"></i>账号密码登录
+                                 </a>
+                            </div>
+                        </div>
+                        <!--手机登录结束-->
+                    </div>
+                    <!--登录结束-->
+                    <!--注册开始-->
+                    <div id="login2_content" class="info tab_css" style="display: none;">
+                        <div class="info_box"><input type="text" name="usernames" placeholder="请输入姓名" value=""></div>
+                        <div class="info_box"><input type="text" name="mobiles" placeholder="请输入手机号" value=""></div>
+                        <div class="info_box">
+                             <input class="float_l code_inp2" type="text" name="mobilecodes" placeholder="请输入验证码" value="">
+                             <a href="#" class="code text-center float_l"><input style="width:80px; font-size:12px;" type="button" id="btn" value="获取验证码" onclick="settime(this)";/></a>
+                        </div>
+                        <div class="info_box"><input type="text" name="passwords" placeholder="请设置登录密码" value=""></div>
+                        <div class="info_box"><input type="text" name="confirmpassword" placeholder="请再次确认密码" value=""></div>
+                        <div class="info_box"><input type="text" name="number" placeholder="请输入工号（非必填）" value=""></div>
+                        <div class="info_box" onclick="submit(this);"><a class="button text-center" href="#">立即注册</a></div>
+                    </div>
+                    <!--注册结束-->
+                </div>
+                <div class="login_footer text-center">
+                    版权所有 深圳典阅科技有限公司 Copyright©2016 occupationedu.com All Rights Reserved. 服务热线：400-9600-062
+                </div>  
+            </div>
+        </div>
+        <!-- jQuery 2.2.3 -->
+        <script src="__PUBLIC__/Js/jQuery/jquery-2.2.3.min.js"></script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="__PUBLIC__/Js/js/bootstrap.min.js"></script>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="__PUBLIC__/layer-v3.0.1/layer/layer.js"></script>
+        <script type="text/javascript">
+            //点击登录注册标签加样式
+            $('.label a').bind('click', function(){
+                $('a').removeClass('active');
+                $(this).addClass('active');
+            });
+            
+      //登录注册标签页切换
+            var login = function(v) { 
+                var llis = document.getElementsByTagName("li");
+                for(var i = 0; i < llis.length; i++) {  
+                    var lli = llis[i];
+                }  
+  
+                var divs = document.getElementsByClassName("tab_css");  
+                for(var i = 0; i < divs.length; i++) {  
+  
+                    var divv = divs[i];  
+  
+                    if(divv == document.getElementById("login" + v + "_content")) {  
+                        divv.style.display = "block";  
+                    } else {  
+                        divv.style.display = "none";  
+                    }  
+                }  
+  
+            }  
+
+            //登录方式切换
+            $(function ID(){
+                $("#mobile").hide(); //默认隐藏
+                $("#login1").on("click",function mobile(){
+                $("#ID").toggle();//显示隐藏切换
+                $("#mobile").show();
+                })
+            })
+
+            $(function mobile(){
+                $("#login2").on("click",function ID(){
+                $("#mobile").toggle();//显示隐藏切换
+                $("#ID").show();
+                })
+            })
+
+        </script>
+
+    <script type="text/javascript">
+      $("#refresh").click(function() {
+        
+        var verifyURL = "{:U('Home/Public/verify',array())}";
+        var time = new Date().getTime();
+        $("#verify_img").attr({
+             "src" : verifyURL + "/" + time
+          });
+      });
+
+      $("#info_box a").click(function(){
+
+        var username=$("input[name='username']").val().trim();
+
+        var password=$("input[name='password']").val().trim();
+
+        var code=$("input[name='code']").val().trim();
+
+        
+
+        if(username==""){
+
+            layer.alert("用户名不能为空");
+        }
+
+        if(password==""){
+
+            layer.alert("密码不能为空");
+        }
+
+        if(code==""){
+
+            layer.alert("验证码不能为空");
+        }
+
+        if(password.length<3||username.length<3){
+
+            layer.alert("用户名或密码长度不能小于3位");
+        }else{
+
+            var url="{:U('Home/Index/index',array())}";
+
+            
+
+            var data={"username":username,"password":password,"code":code}
+
+            $.ajax({
+
+                type: "post",
+
+                data:data,
+
+                url:url,
+
+                dataType:'json',
+
+                success: function(data, textStatus){
+
+                    if(data.code==3){
+
+                         location.href ="{:U('Home/Index/index',array())}";
+
+                    }else{
+
+                        layer.alert(data.message);
+
+                    }
+
+                }
+
+            });
+
+        }
+    })
+
+    </script>
+    <script type="text/javascript"> 
+        
+        var countdown=60; 
+        
+        function settime(obj) { 
+            
+            if (countdown == 0) { 
+                obj.removeAttribute("disabled");    
+                obj.value="获取验证码"; 
+                countdown = 60; 
+                return;
+            } else { 
+                obj.setAttribute("disabled", true); 
+                obj.value="重新发送(" + countdown + ")"; 
+                countdown--; 
+            } 
+        setTimeout(function() { 
+            settime(obj) 
+        }
+            ,1000)
+
+        
+        if(countdown==59){
+            
+            getcode();
+
+        }
+        
+        }
+
+
+        function getcode(){
+
+            var mobile=$("input[name='mobile']").val().trim();
+
+            if(mobile==""){
+
+                var mobile=$("input[name='mobiles']").val().trim();
+            }
+
+            var url="{:U('Home/Public/sendMessage',array())}";
+
+            if(!(/^1[34578]\d{9}$/.test(mobile))){ 
+                    
+                    layer.alert("手机号码有误，请重填");  
+            
+                    return;
+            } 
+            
+            var data={"mobile":mobile};
+
+            $.ajax({
+
+                type: "post",
+
+                data:data,
+
+                url:url,
+
+                dataType:'json',
+
+                success: function(data, textStatus){
+
+                    if(data.code==3){
+
+                         location.href ="{:U('Home/Index/index',array())}";
+
+                    }else{
+
+                        layer.alert(data.message);
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        function mobilelogin(){
+
+
+            var mobile=$("input[name='mobile']").val().trim();
+
+            var code=$("input[name='mobilecode']").val().trim();
+
+            
+            if(!(/^1[34578]\d{9}$/.test(mobile))){ 
+                    
+                    layer.alert("手机号码有误，请重填");
+
+                    return;  
+            } 
+            if(code==""){
+                
+                layer.alert("验证码不能为空");
+
+                return;
+            }
+
+            
+
+            var url="{:U('Home/Index/checkcode',array())}";
+
+            var data={"mobile":mobile,"code":code};
+
+            $.ajax({
+
+                type: "post",
+
+                data:data,
+
+                url:url,
+
+                dataType:'json',
+
+                success: function(data, textStatus){
+
+                    
+
+                    if(data.code==3){
+
+                         location.href ="{:U('Admin/Index/index',array())}";
+
+                    }else{
+
+                        layer.alert(data.message);
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        function submit(obj){
+
+            var username=$("input[name='usernames']").val().trim();
+
+            var mobile=$("input[name='mobiles']").val().trim();
+
+            var code=$("input[name='mobilecodes']").val().trim();
+
+            var password=$("input[name='passwords']").val().trim();
+
+            var confirmpassword=$("input[name='passwords']").val().trim();
+
+            var number=$("input[name='number']").val().trim();
+
+            if(username.length<=6||password.length<=6){
+
+                layer.alert("用户名或密码长度不能小于6位");
+
+                return;
+            }
+
+            if(!(/^1[34578]\d{9}$/.test(mobile))){ 
+                    
+                layer.alert("手机号码有误，请重填");
+
+                return;  
+            } 
+
+            if(password===confirmpassword){
+
+                
+            
+            }else{
+                
+                layer.alert("密码和确认密码不一致");
+
+                return;
+            }
+
+
+           
+            if(code==""){
+                
+                layer.alert("验证码不能为空");
+
+                return;
+            }
+
+            var url="{:U('Home/Register/signup',array())}";
+
+            var data={"username":username,"mobile":mobile,"code":code,"password":password,"number":number};
+
+            $.ajax({
+
+                type: "post",
+
+                data:data,
+
+                url:url,
+
+                dataType:'json',
+
+                success: function(data, textStatus){
+
+                    if(data.code==3){
+
+                        layer.alert(data.message);
+
+                        location.href ="{:U('Home/Index/index',array())}";
+
+                    }else{
+
+                        layer.alert(data.message);
+
+                    }
+
+                }
+
+            });
+
+        }
+
+            function getcodes(){
+
+            var mobile=$("input[name='mobiles']").val().trim();
+
+
+
+            var data={"mobile":mobile};
+
+            var url="{:U('Home/Public/sendMessage',array())}";
+
+            if(!(/^1[34578]\d{9}$/.test(mobile))){ 
+                    
+                    alert("手机号码有误，请重填");  
+            
+            
+            } 
+            
+            $.ajax({
+
+                type: "post",
+
+                data:data,
+
+                url:url,
+
+                dataType:'json',
+
+                success: function(data, textStatus){
+
+                    if(data.code==3){
+
+                         location.href ="{:U('Default/index',array())}";
+
+                    }else{
+
+                        layer.alert(data.message);
+
+                    }
+
+                }
+
+            });
+
+        }
+  
+</script>
+
+    </body>
+</html>
